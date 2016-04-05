@@ -1,0 +1,62 @@
+{% extends 'api/base.html' %}
+
+{% block content %}
+
+
+
+                <div class="row">
+                  <div class="col-sm-9">
+                    <p class="lead">Good afternoon. </p>
+                    <div class="row">
+                      <div class="col-xs-8 col-sm-6">
+                        <table class="table table-striped">
+                          Make sure to check this out
+                        </table>                      </div>
+                      <div class="col-xs-4 col-sm-6">
+                        <div class=test1>
+                              <h1>Summary</h1>
+                              {% for itemview in item %}
+                                <li>{{itemview.title}}</li>
+                              {% endfor %}
+                              </div>
+
+                              <div class="row">                      </div>
+                    </div>
+                  </div>
+                </div>
+                <label class="checkbox-inline">
+  <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+</label>
+<label class="checkbox-inline">
+  <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+</label>
+<label class="checkbox-inline">
+  <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+</label>
+
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+</label>
+
+              <!-- Standard button -->
+
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<
+
+<!-- Indicates a successful or positive action -->
+
+<!-- Contextual button for informational alert messages -->
+
+<!-- Indicates caution should be taken with this action -->
+
+<!-- Indicates a dangerous or potentially negative action -->
+
+<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+{% endblock %}

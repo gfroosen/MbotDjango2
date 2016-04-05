@@ -1,0 +1,21 @@
+{% extends 'api/index.html' %}
+
+
+
+{% block content2 %}
+    <div>
+        {% if form.published_date %}
+            <div>
+                {{ form.published_date }}
+            </div>
+        {% endif %}
+
+        <p>{{form.created_date}}</p>
+        <p>{{form.task_number}}</p>
+        <p>{{form.task_direction}}</p>
+        <p>{{form.task_speed}}</p>
+        <p>{{form.task_time}}</p>
+
+
+    </div>
+{% endblock %}
