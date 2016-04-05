@@ -7,4 +7,4 @@ class RobotSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Robot
-        fields = ('robot', 'task_number')
+        fields = ('robot','task_number', 'task1_speed', 'task1_duration', 'task1_mode', 'task1_command')
