@@ -8,6 +8,7 @@ from django.shortcuts import render
 from .forms import PostForm
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
+from django.db.models import F
 
 
 
@@ -99,3 +100,21 @@ def robot_edit(request, pk):
     else:
         form = PostForm(instance=form)
     return render(request, 'api/robot_edit.html', {'form': form})
+
+
+def mbot(request, pk):
+    form = get_object_or_404(Robot, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=form)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.controler = request.user
+            post.published_date = timezone.now()
+            post.save()
+            Robot.objects.filter(pk=1).update(task_number=F('task_number') + 1)
+
+        return render(request, 'api/mbot.html', {'form': form})
+
+    else:
+        form = PostForm(instance=form)
+    return render(request, 'api/mbot.html', {'form': form})

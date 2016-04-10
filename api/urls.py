@@ -9,7 +9,7 @@ urlpatterns = patterns(
 
     url(r'^control/(?P<pk>\d+)/$', views.robot_detail, name='robot_detail'),
     url(r'^control/(?P<pk>\d+)/edit/$', views.robot_edit, name='robot_edit'),
-
+    url(r'^mbot/(?P<pk>\d+)$', views.mbot, name='mbot'),
     url(r'^control/$', views.robot_control, name='robot_control'),
 
     url(r'^$', views.index, name='index'),
